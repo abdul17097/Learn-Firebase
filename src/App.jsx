@@ -10,6 +10,7 @@ function App() {
     <>
       <div className="">
         <h2>how are you feature1</h2>
+        <h3>Fine</h3>
       </div>
     </>
   );
