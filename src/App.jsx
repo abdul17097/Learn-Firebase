@@ -1,16 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { app } from "./firebaseConfig";
+import { Signup } from "./components/Signup";
+import { Login } from "./components/Login";
 function App() {
-  const [count, setCount] = useState(0);
-
+  const auth = getAuth(app);
+  const handleCreateUser = async () => {
+    const response = await createUserWithEmailAndPassword(
+      auth,
+      "teste@gmail.com",
+      "test123"
+    );
+    console.log(response);
+  };
   return (
     <>
       <div className="">
-        <h2>how are you feature1</h2>
-        <h3>Fine</h3>
+        {/* <Signup /> */}
+        <Login />
       </div>
     </>
   );
